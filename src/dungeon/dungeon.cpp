@@ -1,15 +1,14 @@
 #include "../../include/dungeon/dungeon.h"
 #include "../../include/geometry/point.h"
-#include <iostream>
-#include <cmath>
-#include <algorithm>
-
 
 DungeonEditor::DungeonEditor() 
     : file_observer("log.txt") {}
 
 void DungeonEditor::add_npc(const std::string& type, const std::string& name, int x, int y) {
     try {
+        if (is_name_exists(name)) {
+            return;
+        }
         Point position(x, y);
         auto npc = factory.create_by_type(type, name, position);
         npcs.push_back(std::move(npc));

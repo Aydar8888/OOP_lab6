@@ -1,7 +1,4 @@
 #include "../../../include/npc/factory/npc_factory.h"
-#include <fstream>
-#include <sstream>
-#include <iostream>
 
 std::unique_ptr<Creator> NPCFactory::get_creator(const std::string& type) const {
     if (type == "Друид") return std::make_unique<DruidCreator>();

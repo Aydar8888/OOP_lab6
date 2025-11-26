@@ -1,7 +1,6 @@
 #pragma once
 #include "observer.h"
 #include <vector>
-#include <memory>
 
 class Subject {
 private:

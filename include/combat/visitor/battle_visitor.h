@@ -1,8 +1,6 @@
 #pragma once
 #include "visitor.h"
 #include "../../npc/npc.h"
-#include <vector>
-#include <memory>
 #include "../observer/subject.h"
 #include "../observer/battle_event.h"
 #include "../observer/observer.h"

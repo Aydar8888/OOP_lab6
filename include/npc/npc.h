@@ -1,8 +1,7 @@
 #pragma once
 
-#include <iostream>
-#include <string>
 #include <optional>
+
 #include "../geometry/point.h"
 
 class Visitor;

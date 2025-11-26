@@ -1,7 +1,6 @@
 #pragma once
 
 #include "creator.h"
-#include <memory>
 
 class SlaveTraderCreator : public Creator {
 public:

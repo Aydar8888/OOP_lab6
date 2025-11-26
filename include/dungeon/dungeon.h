@@ -4,8 +4,6 @@
 #include "../combat/visitor/battle_visitor.h"
 #include "../combat/observer/console_observer.h"
 #include "../combat/observer/file_observer.h"
-#include <memory>
-#include <vector>
 
 class DungeonEditor {
 private:

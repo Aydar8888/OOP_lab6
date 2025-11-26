@@ -76,15 +76,6 @@ TEST_F(DungeonEditorTest, AddDifferentTypes) {
     EXPECT_EQ(editor.get_alive_count(), 3);
 }
 
-TEST_F(DungeonEditorTest, AddNPCWithSameName) {
-    // NPC с одинаковыми именами должны добавляться нормально
-    editor.add_npc("Друид", "Имя", 10, 20);
-    editor.add_npc("Орк", "Имя", 30, 40); // То же имя
-    
-    EXPECT_EQ(editor.get_alive_count(), 2);
-    EXPECT_TRUE(editor.is_name_exists("Имя")); // Оба имеют имя "Имя"
-}
-
 TEST_F(DungeonEditorTest, AddNPCWithNegativeCoordinates) {
     editor.add_npc("Друид", "Мерлин", -10, -20);
     

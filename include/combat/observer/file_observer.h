@@ -1,7 +1,6 @@
 #pragma once
 #include "observer.h"
 #include <fstream>
-#include <string>
 
 class FileObserver : public Observer {
 private:

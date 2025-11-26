@@ -2,7 +2,6 @@
 #include "../../../include/npc/types/druid.h"
 #include "../../../include/npc/types/orc.h"
 #include "../../../include/npc/types/slave_trader.h"
-#include <cmath>
 
 BattleVisitor::BattleVisitor(double radius) : current_attacker(nullptr), battle_radius(radius) {}
 

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "creator.h"
-#include <memory>
 
 class DruidCreator : public Creator {
 public:
