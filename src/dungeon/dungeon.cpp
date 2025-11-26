@@ -4,7 +4,6 @@
 #include <cmath>
 #include <algorithm>
 
-// todo добавь правильность введенных данных 
 
 DungeonEditor::DungeonEditor() 
     : file_observer("log.txt") {}
@@ -75,6 +74,7 @@ void DungeonEditor::start_battle(double radius) {
             }
         }
     }
+    remove_dead_npcs();
     
     std::cout << "=== БИТВА ЗАВЕРШЕНА ===\n";
     std::cout << "Осталось живых NPC: " << get_alive_count() << "\n\n";
@@ -88,4 +88,23 @@ size_t DungeonEditor::get_alive_count() const {
         }
     }
     return count;
+}
+
+bool DungeonEditor::is_name_exists(const std::string& name) const {
+    for (const auto& npc : npcs) {
+        if (npc && npc->get_name() == name) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void DungeonEditor::remove_dead_npcs() {
+    for (auto it = npcs.begin(); it != npcs.end(); ) {
+        if (!*it || !(*it)->is_alive()) {
+            it = npcs.erase(it);
+        } else {
+            ++it;
+        }
+    }
 }

@@ -8,6 +8,9 @@ std::string Orc::get_type() const { return "Орк"; }
 void Orc::accept(Visitor& visitor) { visitor.visit(*this); }
 
 std::optional<std::string> Orc::vs(const NPC& target) const {
+    if (!this->is_alive() || !target.is_alive()) {
+        return std::nullopt; 
+    }
     const std::string& type = target.get_type();
 
     if (type == "Орк") {

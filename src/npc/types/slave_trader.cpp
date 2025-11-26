@@ -9,6 +9,9 @@ std::string SlaveTrader::get_type() const { return "Работорговец"; }
 void SlaveTrader::accept(Visitor& visitor) { visitor.visit(*this); }
 
 std::optional<std::string> SlaveTrader::vs(const NPC& target) const {
+    if (!this->is_alive() || !target.is_alive()) {
+        return std::nullopt;
+    }
     const std::string& type = target.get_type();
 
     if (type == "Друид") {

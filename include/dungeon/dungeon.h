@@ -27,4 +27,8 @@ public:
     void start_battle(double radius);
     
     size_t get_alive_count() const;
+
+    bool is_name_exists(const std::string& name) const;
+
+    void remove_dead_npcs();
 };
